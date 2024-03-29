@@ -1,0 +1,10 @@
+connected(battery, cable).
+connected(cable, ignition).
+connected(ignition, engine).
+
+connected(X, Y) :-
+    connected(X, Z),
+    connected(Z, Y).
+
+forward_chaining(X, Y) :-
+    connected(X, Y).
